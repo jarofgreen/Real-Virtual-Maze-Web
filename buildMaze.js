@@ -40,10 +40,10 @@ function init(){
     layer = new OpenLayers.Layer.OSM( "Simple OSM Map");
     map.addLayer(layer);
     map.setCenter(
-        new OpenLayers.LonLat(-71.147, 42.472).transform(
+        new OpenLayers.LonLat(-3.175312, 55.950352).transform(
             new OpenLayers.Projection("EPSG:4326"),
             map.getProjectionObject()
-        ), 12
+        ), 15
     );    
 
     var click = new OpenLayers.Control.Click();
