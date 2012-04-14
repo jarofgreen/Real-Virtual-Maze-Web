@@ -25,5 +25,28 @@ function init(){
 
 }
 
+function getData() {
+
+	var html = '';
+
+	for(i in lineLayer.features) {
+		var f = lineLayer.features[i];
+		for (j in f.geometry.components) {
+			var p = f.geometry.components[j];
+
+			var ll = new OpenLayers.LonLat(p.x, p.y).transform(
+				map.getProjectionObject(),
+	            new OpenLayers.Projection("EPSG:4326"),
+         		15);
+
+			html += ll.lat +","+ ll.lon + "\n";
+
+		}
+		html += "END\n";
+	}
+
+	$('#Results').val(html);
+
+}
 
 
